@@ -1,4 +1,4 @@
 # solar_project
 Модель Солнечной системы на языке Python
 Fuck em all
-:c
+understandable have a nice day
