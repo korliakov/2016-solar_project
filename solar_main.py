@@ -34,14 +34,15 @@ def execution():
     """
     global physical_time
     global displayed_time
-    recalculate_space_objects_positions(space_objects, time_step.get())
+    
+    recalculate_space_objects_positions(space_objects, 10000*time_step.get())        #Вот тут можно домножать параметр time_step.get() и все будет по быстрее
     for body in space_objects:
         update_object_position(space, body)
     physical_time += time_step.get()
     displayed_time.set("%.1f" % physical_time + " seconds gone")
 
     if perform_execution:
-        space.after(101 - int(time_speed.get()), execution)
+        space.after(101 - int(time_speed.get()), execution)    
 
 
 def start_execution():
@@ -75,6 +76,7 @@ def open_file_dialog():
     """
     global space_objects
     global perform_execution
+    
     perform_execution = False
     for obj in space_objects:
         space.delete(obj.image)  # удаление старых изображений планет
